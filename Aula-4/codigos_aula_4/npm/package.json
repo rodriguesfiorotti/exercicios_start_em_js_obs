@@ -1,0 +1,17 @@
+{
+  "name": "aula-sobre-npm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joao Victor Fiorotti",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "zod": "^3.23.8"
+  }
+}

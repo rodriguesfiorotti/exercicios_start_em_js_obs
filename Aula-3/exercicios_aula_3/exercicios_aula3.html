@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões com Arquivos JS</title>
+</head>
+<body>
+    <h1>Exercícios Start em JS</h1>
+    <h2>Aula 3:</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 400px;">
+        <p>Exercício 1: Apresentar a tabuada do númeto informado</p>
+        <button onclick="carregarScript('1_tabuada.js')">Executar Exercício 1</button>
+
+        <p>Exercício 2: Calcular o fatorial de um número</p>
+        <button onclick="carregarScript('2_fatorial.js')">Executar Exercício 2</button>
+
+        <p>Exercício 3: Calcular a média das notas dos alunos</p>
+        <button onclick="carregarScript('3_media_notas.js')">Executar Exercício 3</button>
+
+        <p>Exercício 4: JOGO: Adivinhe o número</p>
+        <button onclick="carregarScript('4_descubra_o_numero.js')">Executar Exercício 4</button>
+    </div>
+
+    <script>
+       function carregarScript(nomeArquivo) {
+            const script = document.createElement('script');
+            script.src = nomeArquivo;
+            document.body.appendChild(script);
+            location.reload();
+            }
+    </script>
+</body>
+</html>
