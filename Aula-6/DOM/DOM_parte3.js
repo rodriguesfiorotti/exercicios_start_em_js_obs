@@ -26,7 +26,7 @@ form.addEventListener("submit", function (evento) {  //quando o evento submit oc
     const inputAno = document.getElementById("ano");
     const inputGenero = document.getElementById("genero");
     
-    const jogo = {}     // cria o objeto jogo
+    const jogo = {}     // cria o objeto jogo.s
 
     // adicionando valores ao objeto com base no valor digitado no campo:
     jogo.nome = inputNome.value
