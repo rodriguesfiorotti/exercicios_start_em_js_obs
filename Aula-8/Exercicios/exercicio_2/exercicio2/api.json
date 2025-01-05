@@ -1,10 +1,10 @@
 {
   "books": [
     {
-      "id": "864b",
       "title": "Teste",
-      "genrer": "Romance",
-      "synopsis": "Um cara conhece uma garota e eles se envolvem"
+      "genrer": "Romance, Drama",
+      "synopsis": "Um cara conhece uma garota e eles se envolvem. Depois disso o que acontece é que...",
+      "id": "864b"
     },
     {
       "id": "7896",
