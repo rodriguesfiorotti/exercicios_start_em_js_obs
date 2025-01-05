@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "id": "864b",
+      "title": "Teste",
+      "genrer": "Romance",
+      "synopsis": "Um cara conhece uma garota e eles se envolvem"
+    },
+    {
+      "id": "7896",
+      "title": "teste 2",
+      "genrer": "Romance",
+      "synopsis": "Sei la a historia"
+    }
+  ]
+}
