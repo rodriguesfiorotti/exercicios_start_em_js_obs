@@ -5,11 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercicio 2: Lista de Livros</title>
+    <style>
+      .concluido {
+        color: green;
+      }
+    </style>
   </head>
   <body>
     <h1>Lista de Leituras</h1>
 
-    <h2>Novo Livro</h2>
+    <h2 id="h2Title">Novo Livro</h2>
     <form id="bookForm">
       <label for="title">Título do Livro:</label><br>
       <input type="text" id="title" required><br>
@@ -20,6 +25,11 @@
       <label for="synopsis">Sinopse:</label><br>
       <textarea id="synopsis" cols="50" rows="5" required></textarea><br>
 
+      <label for="readPagesInput">Páginas Lidas</label><br>
+      <input type="text" id="readPagesInput" required><br>
+
+      <label for="totalPagesInput">Total de Páginas:</label><br>
+      <input type="text" id="totalPagesInput" required><br>
 
       <button type="submit" id="addBookBtn">Adicionar Livro a Lista</button>
     </form>

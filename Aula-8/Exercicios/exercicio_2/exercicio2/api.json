@@ -2,15 +2,19 @@
   "books": [
     {
       "title": "Teste",
-      "genrer": "Romance, Drama",
-      "synopsis": "Um cara conhece uma garota e eles se envolvem. Depois disso o que acontece é que...",
-      "id": "864b"
+      "genrer": "Romance",
+      "synopsis": "teste sinopse",
+      "readPages": "15",
+      "totalPages": "15",
+      "id": "a3bc"
     },
     {
-      "id": "7896",
-      "title": "teste 2",
+      "title": "Teste ",
       "genrer": "Romance",
-      "synopsis": "Sei la a historia"
+      "synopsis": "tetetete",
+      "readPages": "49",
+      "totalPages": "50",
+      "id": "fab2"
     }
   ]
 }
