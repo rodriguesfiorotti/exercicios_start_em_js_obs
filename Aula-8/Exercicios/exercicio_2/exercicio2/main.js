@@ -23,6 +23,11 @@ bookForm.addEventListener("submit", function (event) {
     const readPages = readPagesInput.value;
     const totalPages = totalPagesInput.value;
 
+    if (readPages < 0 || readPages > totalPages) {
+        alert("O número de páginas lidas deve ser maior ou igual a 0 e menor ou igual ao total de páginas.");
+        return;
+    }
+
     if (isEditing) {
         updateBook(editingBookId, title, genrer, synopsis, readPages, totalPages);
     } else {
@@ -61,7 +66,7 @@ async function loadBookList() {
     const editButtons = document.querySelectorAll('.editButton');
     editButtons.forEach(button => {
         button.addEventListener('click', function () {
-            const bookId = this.id;
+            const bookId = this.dataset.id;
             const book = findBookById(booksInfo, bookId);
 
             if (book) {
@@ -73,11 +78,30 @@ async function loadBookList() {
                 totalPagesInput.value = book.totalPages;
 
                 toggleEditMode(true, bookId);
+
+                //Move para o topo da página
+                window.scrollTo({ top: 0, behavior: "smooth" });
             } else {
                 console.error(`Livro com ID=${bookId} não encontrado.`);
             }
         });
     });
+
+    const deleteButtons = document.querySelectorAll('.deleteButton');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const bookId = this.dataset.id;
+            const book = findBookById(booksInfo, bookId);
+
+            if (book) {
+                deleteBook(book.id)
+                console.log(`Excluído o livro: ID=${book.id}, Título=${book.title}`);
+            } else {
+                console.error(`Erro ao excluir o Livro com ID=${bookId}.`);
+            }
+        });
+    });
+
 }
 
 
@@ -86,9 +110,27 @@ function showBooksList(booksInfo) {
     booksInfo.forEach(function (books) {
         const listItem = document.createElement("li")
         if (books.readPages >= books.totalPages) {
-            listItem.innerHTML = `<article class = "concluido"> <h3>${books.title} - Livro Concluído! </h3> <p>${books.genrer} <p>${books.synopsis}</p> <p>Progresso: ${books.readPages}/${books.totalPages} páginas</p> <button type="button"  id="${books.id}" class="editButton">Editar</button> <button type="button" class="deleteButton">Excluir</button> </article><hr>`
+            listItem.innerHTML = `
+            <article class="concluido">
+            <h3>${books.title} - Livro Concluído!</h3>
+            <p><strong>Gênero:</strong> ${books.genrer}</p>
+            <p><strong>Sinopse:</strong> ${books.synopsis}</p>
+            <p><strong>Progresso:</strong> ${books.readPages}/${books.totalPages} páginas</p>
+            <button type="button" data-id="${books.id}" class="editButton">Editar</button>
+            <button type="button" data-id="${books.id}" class="deleteButton">Excluir</button>
+        </article>
+        <hr>`;
         } else {
-            listItem.innerHTML = `<article> <h3>${books.title}</h3> <p>${books.genrer} <p>${books.synopsis}</p> <p>Progresso: ${books.readPages}/${books.totalPages} páginas</p> <button type="button"  id="${books.id}" class="editButton">Editar</button> <button type="button" class="deleteButton">Excluir</button> </article><hr>`
+            listItem.innerHTML = `
+            <article>
+            <h3>${books.title}</h3>
+            <p><strong>Gênero:</strong> ${books.genrer}</p>
+            <p><strong>Sinopse:</strong> ${books.synopsis}</p>
+            <p><strong>Progresso:</strong> ${books.readPages}/${books.totalPages} páginas</p>
+            <button type="button" data-id="${books.id}" class="editButton">Editar</button>
+            <button type="button" data-id="${books.id}" class="deleteButton">Excluir</button>
+        </article>
+        <hr>`;
         }
 
         bookList.appendChild(listItem)
@@ -113,11 +155,13 @@ function toggleEditMode(editing, bookId = null) {
     if (editing) {
         h2Title.textContent = "Editando Livro";
         submitButton.textContent = "Salvar Alterações";
+        cancelEditBtn.style.display = "inline";
         isEditing = true;
         editingBookId = bookId;
     } else {
         h2Title.textContent = "Novo Livro";
         submitButton.textContent = "Adicionar Livro a Lista";
+        cancelEditBtn.style.display = "none";
         isEditing = false;
         editingBookId = null;
     }
@@ -166,6 +210,14 @@ async function deleteBook(id) {
         console.error(erro.message);
     }
 }
+
+function cancelarEdicao() {
+    limparFormulario(); 
+    toggleEditMode(false); 
+}
+
+const cancelEditBtn = document.getElementById('cancelEditBtn');
+cancelEditBtn.addEventListener('click', cancelarEdicao);
 
 // Para rodar é necessário abrir  terminais na pasta em que foi criado os arquivos e:
 

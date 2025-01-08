@@ -9,6 +9,11 @@
       .concluido {
         color: green;
       }
+
+      ul {
+            list-style-type: none;
+        }
+
     </style>
   </head>
   <body>
@@ -17,21 +22,23 @@
     <h2 id="h2Title">Novo Livro</h2>
     <form id="bookForm">
       <label for="title">Título do Livro:</label><br>
-      <input type="text" id="title" required><br>
+      <input type="text" id="title" required><br><br>
 
       <label for="genrer">Gêneros:</label><br>
-      <input type="text" id="genrer" required><br>
+      <input type="text" id="genrer" required><br><br>
 
       <label for="synopsis">Sinopse:</label><br>
-      <textarea id="synopsis" cols="50" rows="5" required></textarea><br>
+      <textarea id="synopsis" cols="50" rows="5" required></textarea><br><br>
 
       <label for="readPagesInput">Páginas Lidas</label><br>
-      <input type="text" id="readPagesInput" required><br>
+      <input type="text" id="readPagesInput" required><br><br>
 
       <label for="totalPagesInput">Total de Páginas:</label><br>
-      <input type="text" id="totalPagesInput" required><br>
+      <input type="text" id="totalPagesInput" required><br><br>
 
       <button type="submit" id="addBookBtn">Adicionar Livro a Lista</button>
+      <button type="button" id="cancelEditBtn" style="display: none;">Cancelar Edição</button>
+
     </form>
     
     <h2>Estante:</h2>

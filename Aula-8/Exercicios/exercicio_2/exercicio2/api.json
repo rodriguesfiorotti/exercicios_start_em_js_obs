@@ -1,20 +1,20 @@
 {
   "books": [
     {
-      "title": "Teste",
-      "genrer": "Romance",
-      "synopsis": "teste sinopse",
-      "readPages": "15",
-      "totalPages": "15",
-      "id": "a3bc"
+      "title": "As cronicas de narnia",
+      "genrer": "aventura, fantasia",
+      "synopsis": "criancas entram em um guarda roupa mágico que as levam para um mundo encantado.",
+      "readPages": "230",
+      "totalPages": "230",
+      "id": "46b6"
     },
     {
-      "title": "Teste ",
-      "genrer": "Romance",
-      "synopsis": "tetetete",
-      "readPages": "49",
-      "totalPages": "50",
-      "id": "fab2"
+      "id": "8693",
+      "title": "João e o Pé de Feijão",
+      "genrer": "Infantil",
+      "synopsis": "Um menino escala um pé de feijão mágico e se depara com uma casa de gigante no céu.",
+      "readPages": "10",
+      "totalPages": "120"
     }
   ]
 }
