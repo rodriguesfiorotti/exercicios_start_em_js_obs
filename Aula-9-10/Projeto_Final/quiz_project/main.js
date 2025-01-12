@@ -1,5 +1,6 @@
 import './style.css'
 import { addSubmitResultListener, loadResults } from './src/results'
+import { createQuestion } from './src/api'
 
 document.addEventListener("DOMContentLoaded", async function () {
     const newResultForm = document.getElementById("newResultForm")
@@ -7,4 +8,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const resultsList = document.getElementById("resultsList")
     if (resultsList) loadResults(resultsList)
+
+    const newQuestionBtn = document.getElementById("newQuestion")
+    if (newQuestionBtn) newQuestionBtn.addEventListener("click", () => createQuestion())
 })
