@@ -10,6 +10,17 @@
         "partiallyAgree": null,
         "fullyAgree": null
       }
+    },
+    {
+      "id": "c28c",
+      "text": "Escreva sua pergunta...",
+      "points": {
+        "fullyDesagree": null,
+        "partiallyDisagree": null,
+        "dontKnow": null,
+        "partiallyAgree": null,
+        "fullyAgree": null
+      }
     }
   ],
   "results": [
