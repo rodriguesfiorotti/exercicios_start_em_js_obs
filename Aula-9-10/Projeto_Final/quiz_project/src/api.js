@@ -9,7 +9,7 @@ export async function createResult(name, description) {
 
     await fetch("http://localhost:3000/results", {
         method: "POST",
-        headers: { "Content-Type": "aplication/json" },
+        headers: { "Content-Type": "application/json" },
         body
     })
 }
@@ -33,7 +33,7 @@ export async function deleteResults(resultId) {
 
 // Função para carregar as perguntas do backend
 export async function fetchQuestions() {
-    return await fetch("http://localhost:3000/results").then((response) => response.json())
+    return await fetch("http://localhost:3000/questions").then((response) => response.json())
 }
 
 // Função para criar uma pergunta vazia
@@ -45,11 +45,15 @@ export async function createQuestion(text = "Escreva sua pergunta...", points = 
     fullyAgree: null
 }) {
     const body = JSON.stringify({ text: text, points: points })
-    await fetch("http://localhost:3000/questions", {
+    const response = await fetch("http://localhost:3000/questions", {
         method: "POST",
-        headers: { "Content-Type": "aplication/json" },
+        headers: { "Content-Type": "application/json" },
         body: body
     })
+
+    if (!response.ok) return alert("Erro ao criar nova pergunta")
+
+    return await response.json()
 }
 // Função para atualizar uma pergunta existente
 export async function updateQuestion(questionId, text, points) {

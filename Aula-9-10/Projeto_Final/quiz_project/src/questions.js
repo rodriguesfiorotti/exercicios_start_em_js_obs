@@ -1,5 +1,10 @@
-import { deleteQuestion, fetchQuestions, fetchResults } from "./api"
+import { createQuestion, deleteQuestion, fetchQuestions, fetchResults } from "./api"
 import { button, div, h3, input, label } from "./elements"
+
+export async function createEmptyQuestion(managerElement, results) {
+   const question = await createQuestion()
+   createQuestionForm(managerElement, question, results)
+}
 
 export async function loadQuestionsMenager(managerElement) {
     managerElement.innerHTML = ""
