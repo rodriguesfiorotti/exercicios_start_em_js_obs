@@ -1,15 +1,15 @@
 {
   "questions": [
     {
-      "id": "2365",
-      "text": "Escreva sua pergunta...",
+      "text": "Texto pergunta",
       "points": {
-        "fullyDesagree": null,
-        "partiallyDisagree": null,
-        "dontKnow": null,
-        "partiallyAgree": null,
-        "fullyAgree": null
-      }
+        "fullyDisagree": "c32d",
+        "partiallyDisagree": "899b",
+        "dontKnow": "undefined",
+        "partiallyAgree": "899b",
+        "fullyAgree": "f301"
+      },
+      "id": "2365"
     },
     {
       "id": "471c",
