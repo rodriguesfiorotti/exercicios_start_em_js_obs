@@ -31,10 +31,11 @@ export function addSubmitResultListener(form) {
   
       const formData = new FormData(form)
   
+      const IdField = formData.get("idField")
       const nameField = formData.get("name")
       const descriptionField = formData.get("description")
   
-      await createResult(nameField, descriptionField)
+      await createResult(IdField, nameField, descriptionField)
 
       form.reset()
       loadResults(document.getElementById("resultsList"))
