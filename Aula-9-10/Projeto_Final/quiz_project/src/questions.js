@@ -25,11 +25,11 @@ function createQuestionForm(managerElement, question, results) {
         const text = formData.get("text")
 
         const points = {}
-        points.fullyDisagree = formData.get("fullyDisagree")
-        points.partiallyDisagree = formData.get("partiallyDisagree")
-        points.dontKnow = formData.get("dontKnow")
-        points.partiallyAgree = formData.get("partiallyAgree")
-        points.fullyAgree = formData.get("fullyAgree")
+        points.fullyDisagree = +formData.get("fullyDisagree")  // O "+" na frente é para garantir que retornará um número.
+        points.partiallyDisagree = +formData.get("partiallyDisagree")
+        points.dontKnow = +formData.get("dontKnow")
+        points.partiallyAgree = +formData.get("partiallyAgree")
+        points.fullyAgree = +formData.get("fullyAgree")
 
         await updateQuestion(question.id, text, points)
         alert("Pergunta atualizada com sucesso!")
@@ -112,7 +112,7 @@ function createAlternativeField(alternative, question, results) {
     results.forEach((results) => {
         const resultOption = option(results.name, { 
             value: results.id,
-            selected: question.points[alternative.fieldName] === results.id 
+            selected: question.points[alternative.fieldName] == results.id 
         })
         fieldSelect.options.add(resultOption)
     })

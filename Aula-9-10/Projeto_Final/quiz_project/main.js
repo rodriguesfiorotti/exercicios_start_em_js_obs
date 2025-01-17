@@ -2,6 +2,7 @@ import './style.css'
 import { addSubmitResultListener, loadResults } from './src/results'
 import { fetchResults } from './src/api'
 import { createEmptyQuestion, loadQuestionsMenager } from './src/questions'
+import { loadQuestions } from './src/quiz'
 
 document.addEventListener("DOMContentLoaded", async function () {
     const newResultForm = document.getElementById("newResultForm")
@@ -17,4 +18,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const newQuestionBtn = document.getElementById("newQuestion")
     if (newQuestionBtn) newQuestionBtn.addEventListener("click", () => createEmptyQuestion(questionsManager, results))
+
+    const quizElement = document.getElementById("quiz")
+    if (quizElement) loadQuestions(quizElement)
 })
