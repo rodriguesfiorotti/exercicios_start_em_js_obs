@@ -3,6 +3,10 @@ export async function fetchResults() {
     return results
   }
 
+  export async function findResult(resultId) {
+    return await fetch(`http://localhost:3000/results/${resultId}`).then((response) => response.json())
+  }
+
 export async function createResult(id, name, description) {
     //const body = JSON.stringify({ name: name, description: description})
     const body = JSON.stringify({ id, name, description})
